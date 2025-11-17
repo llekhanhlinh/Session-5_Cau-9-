@@ -1,11 +1,11 @@
 select film_id, title, rating, length, rental_rate
 from sakila.film
-where rating = 'PG' and length > 100 and rental_rate > 2.00
+where rating = 'PG' and length > 100 and rental_rate > 2.99
 order by rental_rate desc;
 
 update sakila.film
 set rental_rate = rental_rate / 2
-where rating = 'PG' and length>100 and rental_rate>2.00;
+where rating = 'PG' and length>100 and rental_rate>2.99;
 
 /*
 1. Rủi ro:
@@ -16,7 +16,7 @@ where rating = 'PG' and length>100 and rental_rate>2.00;
    Có thể khôi phục giá bằng câu lệnh ngược lại:
    UPDATE sakila.film
    SET rental_rate = rental_rate * 2
-   WHERE rating = 'PG' AND length > 100 AND rental_rate <= 2.00;
+   WHERE rating = 'PG' AND length > 100 AND rental_rate <= 2.99;
 
    Việc chuẩn bị lệnh rollback giúp xử lý lỗi nhanh và bảo vệ tính toàn vẹn dữ liệu.
 
